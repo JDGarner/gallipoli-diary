@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var config = {
+  devtool: 'source-map',
   entry: [
     './src/main.js'
   ],
