@@ -16,7 +16,10 @@ var config = {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
-        loaders: ['babel']
+        loaders: ['babel'],
+        query: {
+          presets: ['react', 'es2015']
+        }
       }
     ]
   },
