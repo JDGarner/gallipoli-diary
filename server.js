@@ -3,7 +3,7 @@ var path = require('path');
 var app = express();
 
 var isProduction = process.env.NODE_ENV === 'production';
-var port = isProduction ? process.env.PORT : 3000;
+var port = (isProduction && process.env.PORT) ? process.env.PORT : 3000;
 
 if (isProduction) {
   app.use(express.static(__dirname + '/dist'));
