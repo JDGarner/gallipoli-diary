@@ -15,7 +15,7 @@ class Counter extends React.Component {
           this.setState({ count: this.state.count + 1 });
         }}
       >
-        Counter:2 {this.state.count}
+        Counter: {this.state.count}
       </button>
     );
   }
