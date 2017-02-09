@@ -18,14 +18,17 @@ var config = {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react', 'es2015', 'react-hmre']
-        }
+        loader: 'babel'
       }
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        BABEL_ENV: JSON.stringify('development')
+      }
+    }),
     new webpack.HotModuleReplacementPlugin()
   ]
 };
