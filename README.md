@@ -1,29 +1,24 @@
-React Skeleton App
+Heroku Test App
 ---
 
-Basic React starter project
+Basic React starter project with Heroku configs
 
 
-Setup
+
+Setup for dev
 ---
-
 ```
 npm install
+npm run build-dev
+npm run dev
+
 ```
 
-
-Usage
+Setup for Heroku
 ---
-
-Start the development server with this command:
-
 ```
-npm start
-```
-
-Compile
----
-
-```
-npm run build
+heroku login
+heroku create <name>
+git push heroku master
+heroku open
 ```
