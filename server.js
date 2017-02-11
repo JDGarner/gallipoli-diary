@@ -16,7 +16,7 @@ if (isProduction) {
   var webpack = require('webpack');
   var webpackDevMiddleware = require('webpack-dev-middleware');
   var webpackHotMiddleware = require('webpack-hot-middleware');
-  var webpackConfig = require('./webpack.config.js');
+  var webpackConfig = require('./webpack.development.config.js');
 
   var compiler = webpack(webpackConfig);
 

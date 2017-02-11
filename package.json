@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build-dev": "webpack --config webpack.development.config.js",
+    "build-dev": "BABEL_ENV=development NODE_ENV=development webpack --config webpack.development.config.js",
     "build-prod": "BABEL_ENV=production NODE_ENV=production webpack --config webpack.production.config.js",
-    "dev": "node server.js",
-    "start": "NODE_ENV=production node server.js",
+    "dev": "BABEL_ENV=development NODE_ENV=development node server.js",
+    "start": "BABEL_ENV=production NODE_ENV=production node server.js",
     "postinstall": "BABEL_ENV=production NODE_ENV=production webpack --config webpack.production.config.js"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "superagent": "^3.4.1",
     "webpack": "^1.14.0"
   },
   "devDependencies": {
