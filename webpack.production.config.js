@@ -18,6 +18,10 @@ var config = {
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/,
         loaders: ['babel']
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
       }
     ]
   },
