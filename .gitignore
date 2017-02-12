@@ -1,5 +1,6 @@
 node_modules
 dist/bundle.js
+dist/*.jpg
 .DS_Store
 /*.env
 diary-sql

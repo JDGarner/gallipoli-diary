@@ -23,6 +23,10 @@ var config = {
       {
         test: /\.css$/,
         loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader'
       }
     ]
   },
