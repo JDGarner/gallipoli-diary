@@ -1,7 +1,7 @@
 Gallipoli Diary
 ---
 
-Site to display entries from my Great Grandfather's WWI diary.
+Web App to display entries from my Great Grandfather's WWI diary.
 
 
 
