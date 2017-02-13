@@ -16,17 +16,22 @@ var config = {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
-        exclude: /node_modules/,
-        loaders: ['babel']
+        loader: 'babel'
       },
       {
         test: /\.scss$/,
-        exclude: /node_modules/,
+        include: path.join(__dirname, 'src'),
         loader: "style-loader!css-loader!sass-loader"
       },
       {
         test: /\.(png|jpg)$/,
+        include: path.join(__dirname, 'src'),
         loader: 'file-loader'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        include: path.join(__dirname, 'src'),
+        loader: 'file?name=fonts/[name].[ext]'
       }
     ]
   },

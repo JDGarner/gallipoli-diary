@@ -1,17 +1,70 @@
 @import 'reset';
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('../fonts/DIN-Medium.ttf');
+}
 
 .home {
-  background: url(../images/gallipoli-charge.jpg) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100%;
+
+  .main-image {
+    background: url(../images/gallipoli-charge.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  h1, h2 {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    width: 100%;
+    font-family: 'DIN-Medium', sans-serif;
+    text-transform: uppercase;
+
+  }
+
+  h1 {
+    font-size: 62px; //change px ?
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 42px;
+    opacity: 0;
+
+    animation-name: increaseOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .entry-container {
   background-color: red;
   width: 100%;
   height: 100vh;
+}
+
+@keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
