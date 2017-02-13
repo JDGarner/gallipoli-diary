@@ -4,3 +4,4 @@ dist/*.jpg
 .DS_Store
 /*.env
 diary-sql
+npm-debug.log

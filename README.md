@@ -1,7 +1,7 @@
-Heroku Test App
+Gallipoli Diary
 ---
 
-Basic React starter project with Heroku configs
+Site to display entries from my Great Grandfather's WWI diary.
 
 
 

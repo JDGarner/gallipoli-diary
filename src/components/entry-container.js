@@ -1,6 +1,7 @@
 import React from 'react';
 import Request from 'superagent';
 import Entry from './entry';
+import config from '../config';
 
 class EntryContainer extends React.Component {
   constructor() {
@@ -11,8 +12,7 @@ class EntryContainer extends React.Component {
   }
 
   componentDidMount() {
-    // Move URL to config
-    var url = 'https://diary-api.herokuapp.com/api/entries';
+    var url = config.diaryApiHost + '/entries';
 
     Request.get(url).end((err, response) => {
       if (err) {
@@ -29,7 +29,9 @@ class EntryContainer extends React.Component {
   render() {
     if (this.state.currentEntry) {
       return (
-        <Entry entry={this.state.currentEntry} />
+        <div className="entry-container">
+          <Entry entry={this.state.currentEntry} />
+        </div>
       );
     } else {
       return null

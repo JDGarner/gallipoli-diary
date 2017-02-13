@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import EntryContainer from './components/entry-container';
-import './css/index.css';
+import App from './components/app';
+import './styles/index.scss';
 
 document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(
-    React.createElement(EntryContainer),
-    document.getElementById('app')
+    React.createElement(App),
+    document.getElementById('app-container')
   );
 });
