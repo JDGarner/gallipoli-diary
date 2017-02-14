@@ -11,6 +11,8 @@
   align-items: center;
   height: 100vh;
   width: 100%;
+  font-family: 'DIN-Medium', sans-serif;
+  text-transform: uppercase;
 
   .main-image {
     background: url(../images/gallipoli-charge.jpg) no-repeat center center;
@@ -18,6 +20,7 @@
     -moz-background-size: cover;
     background-size: cover;
 
+    pointer-events: none;
     position: absolute;
     left: 0;
     top: 0;
@@ -31,26 +34,48 @@
     justify-content: center;
     color: #000;
     width: 100%;
-    font-family: 'DIN-Medium', sans-serif;
-    text-transform: uppercase;
-
   }
 
   h1 {
-    font-size: 6vw;
+    font-size: 6vmax;
     font-weight: bold;
+    padding-bottom: 10px;
   }
 
   h2 {
-    font-size: 4vw;
-    opacity: 0;
+    font-size: 3.5vmax;
+    padding-top: 10px;
 
-    animation-name: increaseOpacity;
+    opacity: 0;
+    animation: increaseOpacity 2s ease-in-out;
     animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;;
-    animation-duration: 2s;
     animation-delay: 1s;
     animation-fill-mode: forwards;
+  }
+
+  .arrow-down {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 30px;
+    padding-top: 10px;
+
+    width: 0;
+    height: 0;
+    border-left: 3vmax solid transparent;
+    border-right: 3vmax solid transparent;
+    border-top: 3vmax solid #000;
+    transition: border-top-color 0.5s ease;
+
+    opacity: 0;
+    animation: increaseOpacity 2s ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .arrow-down:hover {
+    cursor: pointer;
+    border-top-color: red;
   }
 }
 
