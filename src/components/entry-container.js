@@ -27,10 +27,12 @@ class EntryContainer extends React.Component {
   }
 
   render() {
-    if (this.state.currentEntry) {
+    if (this.state.entries) {
       return (
         <div className="entry-container">
-          <Entry entry={this.state.currentEntry} />
+          {this.state.entries.map(e =>
+              <Entry entry={e} />
+          )}
         </div>
       );
     } else {

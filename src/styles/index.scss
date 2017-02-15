@@ -47,49 +47,81 @@
     padding-top: 10px;
 
     opacity: 0;
-    animation: increaseOpacity 2s ease-in-out;
+    animation: increaseOpacity 2s ease-in;
     animation-iteration-count: 1;
     animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
-  .arrow-down {
+  .arrow-wrapper {
     position: absolute;
     bottom: 0;
     padding-bottom: 30px;
     padding-top: 10px;
 
-    width: 0;
-    height: 0;
-    border-left: 3vmax solid transparent;
-    border-right: 3vmax solid transparent;
-    border-top: 3vmax solid #000;
-    transition: border-top-color 0.5s ease;
-
     opacity: 0;
-    animation: increaseOpacity 2s ease-in-out;
+    animation: increaseOpacity 2s ease-in;
     animation-iteration-count: 1;
     animation-delay: 2s;
     animation-fill-mode: forwards;
   }
 
-  .arrow-down:hover {
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 3vmax solid transparent;
+    border-right: 3vmax solid transparent;
+    border-top: 3vmax solid #000;
+    transition: border-top-color 0.35s linear;
+
+    animation: flashBorderRed 2s ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+  }
+
+  .arrow-wrapper:hover {
     cursor: pointer;
-    border-top-color: red;
+    .arrow-down {
+      border-top-color: red;
+    }
   }
 }
 
 .entry-container {
-  background-color: red;
-  width: 100%;
+  width: 70%;
   height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .entry-text {
+    text-align: center;
+  }
 }
 
 @keyframes increaseOpacity {
   0% {
     opacity: 0;
+    color: black;
+  }
+  50% {
+    color: red;
   }
   100% {
     opacity: 1;
+    color: black;
+  }
+}
+
+@keyframes flashBorderRed {
+  0% {
+    border-top-color: black;
+  }
+  50% {
+    border-top-color: red;
+  }
+  100% {
+    border-top-color: black;
   }
 }
