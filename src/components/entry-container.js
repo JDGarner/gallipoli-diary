@@ -17,7 +17,7 @@ class EntryContainer extends React.Component {
     Request.get(url).end((err, response) => {
       if (err) {
         console.log('There was an error fetching from API', err);
-      } else {
+      } else if (response) {
         this.setState({
           entries: response.body,
           currentEntry: response.body[0]
@@ -30,8 +30,8 @@ class EntryContainer extends React.Component {
     if (this.state.entries) {
       return (
         <div className="entry-container">
-          {this.state.entries.map(e =>
-              <Entry entry={e} />
+          {this.state.entries.map((e, i) =>
+              <Entry entry={e} key={i} alignLeft={i % 2 === 0} />
           )}
         </div>
       );

@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('../fonts/DIN-Medium.ttf');
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-family: 'DIN-Medium', sans-serif;
+  text-transform: uppercase;
+
+  .main-image {
+    background: url(../images/gallipoli-charge.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  h1, h2 {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 6vmax;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 3.5vmax;
+    padding-top: 10px;
+
+    opacity: 0;
+    animation: increaseOpacity 2s ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .arrow-wrapper {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 30px;
+    padding-top: 10px;
+
+    opacity: 0;
+    animation: increaseOpacity 2s ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 3vmax solid transparent;
+    border-right: 3vmax solid transparent;
+    border-top: 3vmax solid #000;
+    transition: border-top-color 0.35s linear;
+
+    animation: flashBorderRed 2s ease-in;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+  }
+
+  .arrow-wrapper:hover {
+    cursor: pointer;
+    .arrow-down {
+      border-top-color: red;
+    }
+  }
+}
+
+@keyframes increaseOpacity {
+  0% {
+    opacity: 0;
+    color: black;
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    opacity: 1;
+    color: black;
+  }
+}
+
+@keyframes flashBorderRed {
+  0% {
+    border-top-color: black;
+  }
+  50% {
+    border-top-color: red;
+  }
+  100% {
+    border-top-color: black;
+  }
+}
