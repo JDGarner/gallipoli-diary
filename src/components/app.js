@@ -1,5 +1,5 @@
 import React from 'react';
-import EntryContainer from './entry-container';
+import EntryList from './entry-list';
 import Home from './home';
 import Intro from './intro';
 
@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <Home />
-        <EntryContainer />
+        <EntryList />
       </div>
     );
   }

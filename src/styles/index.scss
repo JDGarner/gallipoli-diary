@@ -1,5 +1,16 @@
+@font-face {
+  font-family: 'DIN-Medium';
+  src: url('../fonts/DIN-Medium.ttf');
+}
+@font-face {
+  font-family: 'Cormorant-Light';
+  src: url('../fonts/Cormorant-Light.ttf');
+}
+
+$small-screen-breakpoint: 800px;
+
 @import 'reset';
 @import 'home';
 @import 'intro';
-@import 'entry-container';
+@import 'entry-list';
 @import 'entry';

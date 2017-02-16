@@ -1,13 +1,10 @@
-.entry-container {
+.entry-list {
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
   position: relative;
-  background-color: #E9F0F5;
   padding: 8vmax 5vmax;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
   &::before {
     content: '';
@@ -15,8 +12,14 @@
     top: 0;
     left: 50%;
     height: 100%;
-    width: 4px;
-    background-color: #D7E4ED;
+    width: 1px;
+    background-color: #e2e2e2;
     margin: 4vmax 0;
+  }
+
+  @media (max-width: $small-screen-breakpoint) {
+    &::before {
+      left: 0;
+    }
   }
 }

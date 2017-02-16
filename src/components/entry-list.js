@@ -3,11 +3,11 @@ import Request from 'superagent';
 import Entry from './entry';
 import config from '../config';
 
-class EntryContainer extends React.Component {
+class EntryList extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 1
+      entries: []
     };
   }
 
@@ -19,17 +19,16 @@ class EntryContainer extends React.Component {
         console.log('There was an error fetching from API', err);
       } else if (response) {
         this.setState({
-          entries: response.body,
-          currentEntry: response.body[0]
+          entries: response.body
         });
       }
     });
   }
 
   render() {
-    if (this.state.entries) {
+    if (this.state.entries && this.state.entries.length > 0) {
       return (
-        <div className="entry-container">
+        <div className="entry-list">
           {this.state.entries.map((e, i) =>
               <Entry entry={e} key={i} alignLeft={i % 2 === 0} />
           )}
@@ -39,13 +38,6 @@ class EntryContainer extends React.Component {
       return null
     }
   }
-
-  getEntry(pageNumber) {
-    this.setState({
-      currentEntry: this.state.entries[pageNumber],
-      currentPage: pageNumber
-    });
-  }
 }
 
-export default EntryContainer;
+export default EntryList;

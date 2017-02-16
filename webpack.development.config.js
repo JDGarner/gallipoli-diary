@@ -30,7 +30,7 @@ var config = {
         loader: 'file-loader'
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
         include: path.join(__dirname, 'src'),
         loader: 'file?name=fonts/[name].[ext]'
       }
