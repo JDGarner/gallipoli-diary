@@ -2,11 +2,11 @@
   position: relative;
   margin-top: 10px;
   font-family: 'Cormorant-Light', sans-serif;
-  font-size: 1.5vmax;
 
   .entry-date {
+    font-size: 2vmax;
     text-align: center;
-    line-height: 4.5vmax;
+    line-height: 5vmax;
     width: 5vmax;
     height: 5vmax;
     margin-left: -2.5vmax;
@@ -25,6 +25,7 @@
 
     .entry-text {
       line-height: 2.3vmax;
+      font-size: 1.5vmax;
     }
 
     .entry-day {
@@ -51,8 +52,6 @@
 
 @media (max-width: $small-screen-breakpoint) {
   .entry-container {
-    font-size: 2vmax;
-
     .entry-date {
       left: 0;
     }
@@ -61,10 +60,15 @@
       width: 80%;
       margin-left: 5vmax;
       margin-bottom: 2vmax;
-    }
 
-    .entry-day {
-      font-size: 2.5vmax;
+      .entry-text {
+        font-size: 2.5vmax;
+        line-height: 3vmax;
+      }
+
+      .entry-day {
+        font-size: 3vmax;
+      }
     }
   }
 
