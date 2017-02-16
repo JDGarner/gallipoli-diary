@@ -1,5 +1,4 @@
 .entry-list {
-  height: 100vh;
   position: relative;
   padding: 8vmax 5vmax;
   overflow: hidden;
@@ -19,7 +18,7 @@
 
   @media (max-width: $small-screen-breakpoint) {
     &::before {
-      left: 0;
+      left: 5vmax;
     }
   }
 }

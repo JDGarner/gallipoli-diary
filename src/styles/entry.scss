@@ -1,30 +1,24 @@
 .entry-container {
-  width: 100%;
-  border-radius: 3px;
   position: relative;
   margin-top: 10px;
   font-family: 'Cormorant-Light', sans-serif;
+  font-size: 1.5vmax;
 
   .entry-date {
     text-align: center;
-    line-height: 34px;
-    width: 36px;
-    height: 36px;
-    margin-left: -18px;
+    line-height: 4.5vmax;
+    width: 5vmax;
+    height: 5vmax;
+    margin-left: -2.5vmax;
     position: absolute;
     left: 50%;
     border-radius: 50%;
     box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
   }
 
-  @media (max-width: $small-screen-breakpoint) {
-    .entry-date {
-      left: 0;
-    }
-  }
+
 
   .entry-content {
-    font-size: 2vmax;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
     padding: 1vmax;
     width: 42%;
@@ -34,13 +28,11 @@
     }
 
     .entry-day {
-      font-size: 2.5vmax;
+      font-size: 2vmax;
       padding-bottom: 10px;
     }
   }
 }
-
-
 
 .left-entry {
   .entry-date {
@@ -55,9 +47,28 @@
   .entry-content {
     float: right;
   }
-  @media (max-width: $small-screen-breakpoint) {
-    .entry-content {
-      float: left;
+}
+
+@media (max-width: $small-screen-breakpoint) {
+  .entry-container {
+    font-size: 2vmax;
+
+    .entry-date {
+      left: 0;
     }
+
+    .entry-content {
+      width: 80%;
+      margin-left: 5vmax;
+      margin-bottom: 2vmax;
+    }
+
+    .entry-day {
+      font-size: 2.5vmax;
+    }
+  }
+
+  .right-entry .entry-content {
+    float: left;
   }
 }
