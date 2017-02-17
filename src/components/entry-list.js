@@ -1,13 +1,16 @@
 import React from 'react';
 import Request from 'superagent';
 import Entry from './entry';
+import Lightbox from './lightbox';
 import config from '../config';
 
 class EntryList extends React.Component {
   constructor() {
     super();
     this.state = {
-      entries: []
+      entries: [],
+      showLightbox: false,
+      lightboxImageSrc: null
     };
   }
 
@@ -30,13 +33,43 @@ class EntryList extends React.Component {
       return (
         <div className="entry-list">
           {this.state.entries.map((e, i) =>
-              <Entry entry={e} key={i} alignLeft={i % 2 === 0} firstEntry={i === 0} />
+              <Entry
+                key={i}
+                entry={e}
+                alignLeft={i % 2 === 0}
+                firstEntry={i === 0}
+                showLightbox={this.onShowLightbox.bind(this)} />
           )}
+          { this.renderLightbox() }
         </div>
       );
     } else {
       return null
     }
+  }
+
+  renderLightbox() {
+    if(this.state.showLightbox) {
+      return <Lightbox
+        hideLightbox={this.onHideLightbox.bind(this)}
+        imageSrc={this.state.lightboxImageSrc} />;
+    } else {
+      return null;
+    }
+  }
+
+  onShowLightbox(imageSrc) {
+    this.setState({
+      showLightbox: true,
+      lightboxImageSrc: imageSrc
+    });
+  }
+
+  onHideLightbox() {
+    this.setState({
+      showLightbox: false,
+      lightboxImageSrc: null
+    });
   }
 }
 

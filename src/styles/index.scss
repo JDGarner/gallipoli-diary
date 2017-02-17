@@ -7,7 +7,7 @@
   src: url('../fonts/Cormorant-Light.ttf');
 }
 
-$small-screen-breakpoint: 800px;
+$small-screen-breakpoint: 950px;
 
 @import 'reset';
 @import 'home';
@@ -15,3 +15,4 @@ $small-screen-breakpoint: 800px;
 @import 'entry-list';
 @import 'entry';
 @import 'entry-image';
+@import 'lightbox';

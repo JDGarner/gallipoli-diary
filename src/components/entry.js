@@ -21,19 +21,24 @@ class Entry extends React.Component {
         <div className="entry-content">
           <div className="entry-day">{entry.day}</div>
           <div className="entry-text">{entry.content}</div>
-          {
-            entry.imageURL || true ?
-              <EntryImage showZoomLabel={this.props.firstEntry} imageURL={entry.imageURL} /> :
-              null
-          }
-          {
-            entry.note ?
-              <div className="entry-text">{entry.note}</div> :
-              null
-          }
+          { this.renderImage(entry.imageURL) }
+          { entry.note ? <div className="entry-text">{entry.note}</div> : null }
         </div>
       </div>
     );
+  }
+
+  renderImage(imageSrc) {
+    if(imageSrc || true) {
+      return (
+        <EntryImage
+          showZoomLabel={this.props.firstEntry}
+          imageSrc={imageSrc}
+          showLightbox={this.props.showLightbox.bind(this)} />
+      );
+    } else {
+      return null;
+    }
   }
 }
 

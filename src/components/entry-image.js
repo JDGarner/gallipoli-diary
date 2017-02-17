@@ -4,19 +4,26 @@ class EntryImage extends React.Component {
 
   render() {
     return (
-      <div className="entry-image" onClick={this.enlargeImage}>
+      <div className="entry-image" onClick={this.zoomInImage.bind(this)}>
         <img src="https://s9.postimg.org/l09va3qxr/diary.jpg"/>
-        {
-          this.props.showZoomLabel ?
-            <span>Tap me to zoom</span> :
-            null
-        }
+        { this.renderZoomLabel() }
       </div>
     );
   }
 
-  enlargeImage() {
-    console.log('ZOOOM!');
+  renderZoomLabel() {
+    if (this.props.showZoomLabel) {
+      return (
+        <span>Tap me to zoom</span>
+      );
+    } else {
+      return null;
+    }
+  }
+
+  zoomInImage(e) {
+    e.stopPropagation();
+    this.props.showLightbox(this.props.imageSrc || "https://s9.postimg.org/l09va3qxr/diary.jpg");
   }
 }
 
