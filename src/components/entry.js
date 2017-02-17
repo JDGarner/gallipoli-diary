@@ -29,7 +29,7 @@ class Entry extends React.Component {
   }
 
   renderImage(imageSrc) {
-    if(imageSrc || true) {
+    if(imageSrc || true && this.props.firstEntry) {
       return (
         <EntryImage
           showZoomLabel={this.props.firstEntry}
