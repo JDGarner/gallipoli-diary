@@ -30,7 +30,7 @@ class EntryList extends React.Component {
       return (
         <div className="entry-list">
           {this.state.entries.map((e, i) =>
-              <Entry entry={e} key={i} alignLeft={i % 2 === 0} />
+              <Entry entry={e} key={i} alignLeft={i % 2 === 0} firstEntry={i === 0} />
           )}
         </div>
       );

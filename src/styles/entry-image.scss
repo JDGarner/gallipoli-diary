@@ -1,0 +1,23 @@
+.entry-image {
+  width: 70%;
+  margin: 0 auto;
+  padding: 10px 0;
+  cursor: zoom-in;
+  text-align: center;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  span {
+    font-size: 1.5vmax;
+    font-style: italic;
+  }
+}
+
+@media (max-width: $small-screen-breakpoint) {
+  .entry-image span {
+    font-size: 3vmax;
+  }
+}

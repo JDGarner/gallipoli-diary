@@ -1,4 +1,5 @@
 import React from 'react';
+import EntryImage from './entry-image';
 import cx from 'classnames';
 
 class Entry extends React.Component {
@@ -19,7 +20,17 @@ class Entry extends React.Component {
         <div className="entry-date">{entry.date}</div>
         <div className="entry-content">
           <div className="entry-day">{entry.day}</div>
-          <span className="entry-text">{entry.content}</span>
+          <div className="entry-text">{entry.content}</div>
+          {
+            entry.imageURL || true ?
+              <EntryImage showZoomLabel={this.props.firstEntry} imageURL={entry.imageURL} /> :
+              null
+          }
+          {
+            entry.note ?
+              <div className="entry-text">{entry.note}</div> :
+              null
+          }
         </div>
       </div>
     );
