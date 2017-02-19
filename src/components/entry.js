@@ -17,6 +17,7 @@ class Entry extends React.Component {
 
     return (
       <div className={this.entryClasses}>
+        { this.renderEntryMonth(entry.month) }
         <div className="entry-date">{entry.date}</div>
         <div className="entry-content">
           <div className="entry-day">{entry.day}</div>
@@ -26,6 +27,18 @@ class Entry extends React.Component {
         </div>
       </div>
     );
+  }
+
+  renderEntryMonth(month) {
+    if (this.props.isFirstEntryOfMonth) {
+      return (
+        <div className="entry-month">
+          <span>{month}</span>
+        </div>
+      );
+    } else {
+      return null;
+    }
   }
 
   renderImage(imageSrc) {

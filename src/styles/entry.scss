@@ -3,6 +3,20 @@
   margin-top: 10px;
   font-family: 'Cormorant-Light', sans-serif;
 
+  .entry-month {
+    text-align: center;
+    padding-top: 1vmax;
+    height: 6vmax;
+    font-size: 3vmax;
+
+    span {
+      padding: 2px 7px;
+      background-color: #FFF;
+      border-top: 1px #e2e2e2 solid;
+      border-bottom: 1px #e2e2e2 solid;
+    }
+  }
+
   .entry-date {
     font-size: 2vmax;
     text-align: center;
@@ -50,6 +64,15 @@
 
 @media (max-width: $small-screen-breakpoint) {
   .entry-container {
+    .entry-month {
+      font-size: 5vmax;
+      height: 9vmax;
+
+      span {
+        border-top: none;
+      }
+    }
+
     .entry-date {
       left: 0;
     }

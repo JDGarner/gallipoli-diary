@@ -12,6 +12,7 @@ class EntryList extends React.Component {
       showLightbox: false,
       lightboxImageSrc: null
     };
+    this.currentMonth = '';
   }
 
   componentDidMount() {
@@ -33,18 +34,28 @@ class EntryList extends React.Component {
       return (
         <div className="entry-list">
           {this.state.entries.map((e, i) =>
-              <Entry
-                key={i}
-                entry={e}
-                alignLeft={i % 2 === 0}
-                firstEntry={i === 0}
-                showLightbox={this.onShowLightbox.bind(this)} />
+            <Entry
+              key={i}
+              entry={e}
+              alignLeft={i % 2 === 0}
+              firstEntry={i === 0}
+              isFirstEntryOfMonth={this.isFirstEntryOfMonth(e)}
+              showLightbox={this.onShowLightbox.bind(this)} />
           )}
           { this.renderLightbox() }
         </div>
       );
     } else {
       return null
+    }
+  }
+
+  isFirstEntryOfMonth(e) {
+    if (e.month !== this.currentMonth) {
+      this.currentMonth = e.month;
+      return true;
+    } else {
+      return false;
     }
   }
 
