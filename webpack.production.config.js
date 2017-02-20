@@ -16,7 +16,7 @@ var config = {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src'),
-        loader: 'babel'
+        loader: 'babel-loader'
       },
       {
         test: /\.scss$/,
@@ -31,7 +31,7 @@ var config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         include: path.join(__dirname, 'src'),
-        loader: 'file?name=fonts/[name].[ext]'
+        loader: 'file-loader?name=fonts/[name].[ext]'
       }
     ]
   },
