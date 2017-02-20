@@ -9,6 +9,7 @@ class EntryList extends React.Component {
     super();
     this.state = {
       entries: [],
+      showAbridgedVersion: true,
       showLightbox: false,
       lightboxImageSrc: null
     };
@@ -33,14 +34,11 @@ class EntryList extends React.Component {
     if (this.state.entries && this.state.entries.length > 0) {
       return (
         <div className="entry-list">
+          <div className="version-button" onClick={this.changeVersion.bind(this)}>
+            {this.getVersionButtonText()}
+          </div>
           {this.state.entries.map((e, i) =>
-            <Entry
-              key={i}
-              entry={e}
-              alignLeft={i % 2 === 0}
-              firstEntry={i === 0}
-              isFirstEntryOfMonth={this.isFirstEntryOfMonth(e)}
-              showLightbox={this.onShowLightbox.bind(this)} />
+            this.renderEntry(e, i)
           )}
           { this.renderLightbox() }
         </div>
@@ -50,12 +48,31 @@ class EntryList extends React.Component {
     }
   }
 
-  isFirstEntryOfMonth(e) {
-    if (e.month !== this.currentMonth) {
-      this.currentMonth = e.month;
-      return true;
+  getVersionButtonText() {
+    if (this.state.showAbridgedVersion) {
+      return "Show Full Version";
     } else {
-      return false;
+      return "Show Abridged Version";
+    }
+  }
+
+  changeVersion() {
+    this.setState({
+      showAbridgedVersion: !this.state.showAbridgedVersion
+    });
+  }
+
+  renderEntry(e, i) {
+    if (this.shouldDisplayEntry(e)) {
+      return(
+        <Entry
+          key={i}
+          entry={e}
+          isFirstEntryOfMonth={this.isFirstEntryOfMonth(e)}
+          showLightbox={this.onShowLightbox.bind(this)} />
+      );
+    } else {
+      return null;
     }
   }
 
@@ -81,6 +98,19 @@ class EntryList extends React.Component {
       showLightbox: false,
       lightboxImageSrc: null
     });
+  }
+
+  isFirstEntryOfMonth(e) {
+    if (e.month !== this.currentMonth) {
+      this.currentMonth = e.month;
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  shouldDisplayEntry(e) {
+    return (this.state.showAbridgedVersion && e.abridged) || !this.state.showAbridgedVersion;
   }
 }
 

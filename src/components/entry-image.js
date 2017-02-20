@@ -5,16 +5,16 @@ class EntryImage extends React.Component {
   render() {
     return (
       <div className="entry-image" onClick={this.zoomInImage.bind(this)}>
-        <img src="https://s9.postimg.org/l09va3qxr/diary.jpg"/>
-        { this.renderZoomLabel() }
+        <img src={this.props.imagePath}/>
+        { this.renderImageNote(this.props.imageNote) }
       </div>
     );
   }
 
-  renderZoomLabel() {
-    if (this.props.showZoomLabel) {
+  renderImageNote(note) {
+    if (note) {
       return (
-        <span>Tap me to zoom</span>
+        <span>{note}</span>
       );
     } else {
       return null;
@@ -23,7 +23,7 @@ class EntryImage extends React.Component {
 
   zoomInImage(e) {
     e.stopPropagation();
-    this.props.showLightbox(this.props.imageSrc || "https://s9.postimg.org/l09va3qxr/diary.jpg");
+    this.props.showLightbox(this.props.imagePath);
   }
 }
 

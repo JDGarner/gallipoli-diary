@@ -1,29 +1,22 @@
 import React from 'react';
 import EntryImage from './entry-image';
 import cx from 'classnames';
+import config from '../config';
 
 class Entry extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.entryClasses = cx("entry-container", {
-      "left-entry": this.props.alignLeft,
-      "right-entry": !this.props.alignLeft,
-    });
-  }
 
   render() {
     let entry = this.props.entry;
 
     return (
-      <div className={this.entryClasses}>
+      <div className="entry-container">
         { this.renderEntryMonth(entry.month) }
         <div className="entry-date">{entry.date}</div>
         <div className="entry-content">
           <div className="entry-day">{entry.day}</div>
-          <div className="entry-text">{entry.content}</div>
-          { this.renderImage(entry.imageURL) }
-          { entry.note ? <div className="entry-text">{entry.note}</div> : null }
+          <div className="entry-text">'{entry.content}'</div>
+          { this.renderImage(entry.imageurl, entry.imagenote) }
+          { entry.note ? <div className="entry-text note">Note - {entry.note}</div> : null }
         </div>
       </div>
     );
@@ -41,12 +34,14 @@ class Entry extends React.Component {
     }
   }
 
-  renderImage(imageSrc) {
-    if(imageSrc || true && this.props.firstEntry) {
+  renderImage(imageSrc, imageNote) {
+    if(imageSrc) {
+      let imagePath = config.cdnHost + imageSrc;
+
       return (
         <EntryImage
-          showZoomLabel={this.props.firstEntry}
-          imageSrc={imageSrc}
+          imagePath={imagePath}
+          imageNote={imageNote}
           showLightbox={this.props.showLightbox.bind(this)} />
       );
     } else {

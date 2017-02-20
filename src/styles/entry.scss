@@ -38,6 +38,10 @@
     .entry-text {
       line-height: 2.3vmax;
       font-size: 1.5vmax;
+
+      &.note {
+        padding-top: 10px;
+      }
     }
 
     .entry-day {
@@ -47,13 +51,13 @@
   }
 }
 
-.left-entry {
+.entry-container:nth-child(even) {
   .entry-date {
     background-color: #e4f2ff;
   }
 }
 
-.right-entry {
+.entry-container:nth-child(odd) {
   .entry-date {
     background-color: #ffdede;
   }
@@ -94,7 +98,7 @@
     }
   }
 
-  .right-entry .entry-content {
+  .entry-container:nth-child(odd) .entry-content {
     float: left;
   }
 }
