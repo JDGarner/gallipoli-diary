@@ -1,7 +1,7 @@
 .entry-container {
   position: relative;
   margin-top: 10px;
-  font-family: 'Cormorant-Light', sans-serif;
+  font-family: 'Cormorant-Light', serif;
 
   .entry-month {
     text-align: center;
@@ -41,6 +41,10 @@
 
       &.note {
         padding-top: 10px;
+      }
+
+      b {
+        font-family: 'Cormorant-Bold', serif;
       }
     }
 

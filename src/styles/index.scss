@@ -1,10 +1,14 @@
 @font-face {
   font-family: 'DIN-Medium';
-  src: url('../fonts/DIN-Medium.ttf');
+  src: url('../fonts/din-medium.woff');
 }
 @font-face {
   font-family: 'Cormorant-Light';
-  src: url('../fonts/Cormorant-Light.ttf');
+  src: url('../fonts/cormorant-light.woff');
+}
+@font-face {
+  font-family: 'Cormorant-Bold';
+  src: url('../fonts/cormorant-bold.woff');
 }
 
 $small-screen-breakpoint: 950px;

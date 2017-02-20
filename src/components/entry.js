@@ -16,7 +16,7 @@ class Entry extends React.Component {
           <div className="entry-day">{entry.day}</div>
           <div className="entry-text">'{entry.content}'</div>
           { this.renderImage(entry.imageurl, entry.imagenote) }
-          { entry.note ? <div className="entry-text note">Note - {entry.note}</div> : null }
+          { entry.note ? <div className="entry-text note"><b>Note -</b> {entry.note}</div> : null }
         </div>
       </div>
     );
