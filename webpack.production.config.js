@@ -4,7 +4,8 @@ var webpack = require('webpack');
 var config = {
   devtool: 'source-map',
   entry: [
-    './src/main.js'
+    './src/main.js',
+    './src/google-analytics.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
