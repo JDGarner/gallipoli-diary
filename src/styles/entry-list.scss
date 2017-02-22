@@ -4,9 +4,29 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  font-family: 'Cormorant-Light', serif;
 
-  .version-button {
+  .version-buttons {
     cursor: pointer;
+    padding-bottom: 14px;
+
+    span {
+      padding: 5px;
+      border: 1px solid;
+      margin: 0 3px;
+      border-radius: 6px;
+      border-color: #ccc;
+    }
+
+    .active:hover {
+      background-color: #e6e6e6;
+      border-color: #adadad;
+    }
+
+    .greyed-out {
+      color: #c1c1c1;
+      cursor: default;
+    }
   }
 
   &::before {
@@ -17,12 +37,18 @@
     height: 100%;
     width: 1px;
     background-color: #e2e2e2;
-    margin: 4vmax 0;
+    margin: 20vmax 0;
   }
 
   @media (max-width: $small-screen-breakpoint) {
     &::before {
       left: 5vmax;
+      margin: 23vmax 0;
+    }
+
+    .version-buttons {
+      font-size: 2vmax;
+      text-align: center;
     }
   }
 }

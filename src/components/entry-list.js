@@ -1,5 +1,6 @@
 import React from 'react';
 import Request from 'superagent';
+import cx from 'classnames';
 import Entry from './entry';
 import config from '../config';
 
@@ -31,9 +32,7 @@ class EntryList extends React.Component {
     if (this.state.entries && this.state.entries.length > 0) {
       return (
         <div className="entry-list">
-          <div className="version-button" onClick={this.changeVersion.bind(this)}>
-            {this.getVersionButtonText()}
-          </div>
+          { this.renderVersionButtons() }
           {this.state.entries.map((e, i) =>
             this.renderEntry(e, i)
           )}
@@ -45,18 +44,47 @@ class EntryList extends React.Component {
     }
   }
 
-  getVersionButtonText() {
+  renderVersionButtons() {
+    let fullVersionClasses = cx(
+      {'active': this.state.showAbridgedVersion},
+      {'greyed-out': !this.state.showAbridgedVersion}
+    );
+
+    let abridgedVersionClasses = cx(
+      {'active': !this.state.showAbridgedVersion},
+      {'greyed-out': this.state.showAbridgedVersion}
+    );
+
+    return(
+      <div className="version-buttons">
+        <span
+          className={fullVersionClasses}
+          onClick={this.changeToFullVersion.bind(this)}>
+          Read Full Version
+        </span>
+        <span
+          className={abridgedVersionClasses}
+          onClick={this.changeToAbridgedVersion.bind(this)}>
+          Read Abridged Version
+        </span>
+      </div>
+    );
+  }
+
+  changeToFullVersion() {
     if (this.state.showAbridgedVersion) {
-      return "Show Full Version";
-    } else {
-      return "Show Abridged Version";
+      this.setState({
+        showAbridgedVersion: false
+      });
     }
   }
 
-  changeVersion() {
-    this.setState({
-      showAbridgedVersion: !this.state.showAbridgedVersion
-    });
+  changeToAbridgedVersion() {
+    if (!this.state.showAbridgedVersion) {
+      this.setState({
+        showAbridgedVersion: true
+      });
+    }
   }
 
   renderEntry(e, i) {
