@@ -8,8 +8,11 @@
   cursor: zoom-out;
 
   img {
+    max-width: 75%;
+    max-height: 90%;
+    height: auto;
+    width: auto;
     position:fixed;
-    width: 105vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -20,6 +23,9 @@
 
 @media (max-width: $small-screen-breakpoint) {
   .lightbox img {
-    width: 95vw;
+    max-width: 92%;
+    max-height: 92%;
+    height: auto;
+    width: auto;
   }
 }

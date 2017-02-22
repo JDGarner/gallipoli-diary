@@ -1,7 +1,6 @@
 import React from 'react';
 import Request from 'superagent';
 import Entry from './entry';
-import Lightbox from './lightbox';
 import config from '../config';
 
 class EntryList extends React.Component {
@@ -9,9 +8,7 @@ class EntryList extends React.Component {
     super();
     this.state = {
       entries: [],
-      showAbridgedVersion: true,
-      showLightbox: false,
-      lightboxImageSrc: null
+      showAbridgedVersion: true
     };
     this.currentMonth = '';
   }
@@ -40,7 +37,7 @@ class EntryList extends React.Component {
           {this.state.entries.map((e, i) =>
             this.renderEntry(e, i)
           )}
-          { this.renderLightbox() }
+
         </div>
       );
     } else {
@@ -69,35 +66,11 @@ class EntryList extends React.Component {
           key={i}
           entry={e}
           isFirstEntryOfMonth={this.isFirstEntryOfMonth(e)}
-          showLightbox={this.onShowLightbox.bind(this)} />
+          showLightbox={this.props.showLightbox.bind(this)} />
       );
     } else {
       return null;
     }
-  }
-
-  renderLightbox() {
-    if(this.state.showLightbox) {
-      return <Lightbox
-        hideLightbox={this.onHideLightbox.bind(this)}
-        imageSrc={this.state.lightboxImageSrc} />;
-    } else {
-      return null;
-    }
-  }
-
-  onShowLightbox(imageSrc) {
-    this.setState({
-      showLightbox: true,
-      lightboxImageSrc: imageSrc
-    });
-  }
-
-  onHideLightbox() {
-    this.setState({
-      showLightbox: false,
-      lightboxImageSrc: null
-    });
   }
 
   isFirstEntryOfMonth(e) {
