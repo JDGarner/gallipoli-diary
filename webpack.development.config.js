@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var postcss = require('./postcss.config.js');
 
 var config = {
   devtool: 'eval-source-map',
@@ -22,7 +23,7 @@ var config = {
       {
         test: /\.scss$/,
         include: path.join(__dirname, 'src'),
-        loader: "style-loader!css-loader!sass-loader"
+        loader: "style-loader!css-loader!postcss-loader!sass-loader"
       },
       {
         test: /\.(png|jpg)$/,
