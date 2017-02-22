@@ -1,10 +1,11 @@
 import React from 'react';
-require('smoothscroll-polyfill').polyfill();
+import Scroll from 'react-scroll';
 
 class Home extends React.Component {
 
   scrollDown() {
-    window.scroll({ top: window.innerHeight, left: 0, behavior: 'smooth' });
+    let scroll = Scroll.animateScroll;
+    scroll.scrollTo(window.innerHeight, { duration: 750 });
   }
 
   render() {

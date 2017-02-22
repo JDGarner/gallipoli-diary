@@ -16,7 +16,7 @@ class Intro extends React.Component {
         </div>
           <ThumbnailImage
             imagePath={imgPath}
-            imageNote="Bampa sitting on the left - Tap image to zoom"
+            imageNote="Bampa sitting on the left (Tap to zoom)"
             showLightbox={this.props.showLightbox.bind(this)} />
         <div className="intro-text two">
           <span>Frederick Richard Goddard (known as Bampa to his Grandchildren) enlisted on 26th January 1915,
