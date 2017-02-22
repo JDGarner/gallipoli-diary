@@ -1,5 +1,5 @@
 import React from 'react';
-import EntryImage from './entry-image';
+import ThumbnailImage from './thumbnail-image';
 import cx from 'classnames';
 import config from '../config';
 
@@ -9,7 +9,7 @@ class Entry extends React.Component {
     let entry = this.props.entry;
 
     return (
-      <div className="entry-container">
+      <div className="entry">
         { this.renderEntryMonth(entry.month) }
         <div className="entry-date">{entry.date}</div>
         <div className="entry-content">
@@ -39,7 +39,7 @@ class Entry extends React.Component {
       let imagePath = config.cdnHost + imageSrc;
 
       return (
-        <EntryImage
+        <ThumbnailImage
           imagePath={imagePath}
           imageNote={imageNote}
           showLightbox={this.props.showLightbox.bind(this)} />

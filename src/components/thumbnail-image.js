@@ -1,10 +1,10 @@
 import React from 'react';
 
-class EntryImage extends React.Component {
+class ThumbnailImage extends React.Component {
 
   render() {
     return (
-      <div className="entry-image" onClick={this.zoomInImage.bind(this)}>
+      <div className="thumbnail-image" onClick={this.zoomInImage.bind(this)}>
         <img src={this.props.imagePath}/>
         { this.renderImageNote(this.props.imageNote) }
       </div>
@@ -14,7 +14,7 @@ class EntryImage extends React.Component {
   renderImageNote(note) {
     if (note) {
       return (
-        <span>{note}</span>
+        <span className="image-note">{note}</span>
       );
     } else {
       return null;
@@ -27,4 +27,4 @@ class EntryImage extends React.Component {
   }
 }
 
-export default EntryImage;
+export default ThumbnailImage;

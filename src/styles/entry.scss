@@ -1,4 +1,4 @@
-.entry-container {
+.entry {
   position: relative;
   margin-top: 10px;
   font-family: 'Cormorant-Light', serif;
@@ -52,16 +52,22 @@
       font-size: 2vmax;
       padding-bottom: 10px;
     }
+
+    .thumbnail-image {
+      width: 70%;
+      font-size: 1.5vmax;
+      padding: 10px 0;
+    }
   }
 }
 
-.entry-container:nth-child(even) {
+.entry:nth-child(even) {
   .entry-date {
     background-color: #e4f2ff;
   }
 }
 
-.entry-container:nth-child(odd) {
+.entry:nth-child(odd) {
   .entry-date {
     background-color: #ffdede;
   }
@@ -71,7 +77,7 @@
 }
 
 @media (max-width: $small-screen-breakpoint) {
-  .entry-container {
+  .entry {
     .entry-month {
       font-size: 5vmax;
       height: 9vmax;
@@ -99,10 +105,14 @@
         font-size: 4vmax;
         padding-bottom: 15px;
       }
+
+      .thumbnail-image {
+        font-size: 3vmax;
+      }
     }
   }
 
-  .entry-container:nth-child(odd) .entry-content {
+  .entry:nth-child(odd) .entry-content {
     float: left;
   }
 }

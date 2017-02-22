@@ -40,10 +40,9 @@
     font-size: 3.5vmax;
     padding-top: 10px;
 
-    opacity: 0;
-    animation: increaseOpacity 2s ease-in;
+    color: #da0c0c;
+    animation: fadeToBlack 5s linear;
     animation-iteration-count: 1;
-    animation-delay: 1s;
     animation-fill-mode: forwards;
   }
 
@@ -52,12 +51,6 @@
     bottom: 0;
     padding-bottom: 30px;
     padding-top: 10px;
-
-    opacity: 0;
-    animation: increaseOpacity 2s ease-in;
-    animation-iteration-count: 1;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
   }
 
   .arrow-down {
@@ -66,43 +59,22 @@
     border-left: 3vmax solid transparent;
     border-right: 3vmax solid transparent;
     border-top: 3vmax solid #000;
-    transition: border-top-color 0.35s linear;
-
-    animation: flashBorderRed 2s ease-in;
-    animation-iteration-count: 1;
-    animation-delay: 1.5s;
+    transition: border-top-color 0.5s linear;
   }
 
   .arrow-wrapper:hover {
     cursor: pointer;
     .arrow-down {
-      border-top-color: red;
+      border-top-color: #da0c0c;
     }
   }
 }
 
-@keyframes increaseOpacity {
+@keyframes fadeToBlack {
   0% {
-    opacity: 0;
-    color: black;
-  }
-  50% {
-    color: red;
+    color: #da0c0c;
   }
   100% {
-    opacity: 1;
     color: black;
-  }
-}
-
-@keyframes flashBorderRed {
-  0% {
-    border-top-color: black;
-  }
-  50% {
-    border-top-color: red;
-  }
-  100% {
-    border-top-color: black;
   }
 }
