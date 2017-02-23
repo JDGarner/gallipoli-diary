@@ -3,6 +3,7 @@ import Request from 'superagent';
 import cx from 'classnames';
 import Entry from './entry';
 import config from '../config';
+import Spinner from 'react-spinkit';
 
 class EntryList extends React.Component {
   constructor() {
@@ -40,7 +41,12 @@ class EntryList extends React.Component {
         </div>
       );
     } else {
-      return null
+      return (
+        <div className="loading">
+          <Spinner spinnerName='circle' />
+          <span>Loading diary entries...</span>
+        </div>
+      );
     }
   }
 

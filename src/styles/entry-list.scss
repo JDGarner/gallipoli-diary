@@ -4,7 +4,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  font-family: 'Cormorant-Light', serif;
 
   .version-buttons {
     cursor: pointer;
@@ -39,8 +38,25 @@
     background-color: #e2e2e2;
     margin: 20vmax 0;
   }
+}
 
-  @media (max-width: $small-screen-breakpoint) {
+.loading {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5vmax;
+
+  .sk-circle-wrapper {
+    margin: 0 auto;
+  }
+
+  span {
+    display: block;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: $small-screen-breakpoint) {
+  .entry-list {
     &::before {
       left: 5vmax;
       margin: 23vmax 0;
@@ -50,5 +66,9 @@
       font-size: 2vmax;
       text-align: center;
     }
+  }
+
+  .loading {
+    font-size: 2.25vmax;
   }
 }
