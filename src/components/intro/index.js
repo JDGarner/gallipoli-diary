@@ -1,6 +1,6 @@
 import React from 'react';
-import ThumbnailImage from './thumbnail-image';
-import Config from '../config';
+import ThumbnailImage from '../thumbnail-image';
+import Config from '../../config';
 
 class Intro extends React.Component {
 

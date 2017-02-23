@@ -7,20 +7,28 @@
   justify-content: center;
   flex-direction: column;
   font-family: 'Cormorant-Light', serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  @include medium {
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+  @include small {
+    font-size: 0.8rem;
+    line-height: 1rem;
+  }
 
   .intro-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.5vmax;
 
     &.one {
-      padding: 3vmax 0;
+      padding: 1rem 0;
     }
 
     &.two {
-      padding-top: 3vmax;
-      padding-bottom: 1.5vmax;
+      padding: 1rem 0;
       border-bottom: 1px solid #e2e2e2;
     }
 
@@ -32,35 +40,13 @@
 
   .thumbnail-image {
     width: 50%;
-    font-size: 1.5vmax;
+    @include medium {
+      width: 80%;
+    }
     img {
       max-width: 500px;
       display: block;
       margin: 0 auto;
-    }
-  }
-}
-
-@media (max-width: $small-screen-breakpoint) {
-  .intro {
-    .intro-text {
-      font-size: 2.25vmax;
-      line-height: 2.6vmax;
-
-      &.one {
-        padding: 6vmax 0;
-      }
-
-      &.two {
-        padding-top: 6vmax;
-        padding-bottom: 2vmax;
-        border-bottom: 1px solid #d6d6d6;
-      }
-    }
-
-    .thumbnail-image {
-      width: 80%;
-      font-size: 2.25vmax;
     }
   }
 }

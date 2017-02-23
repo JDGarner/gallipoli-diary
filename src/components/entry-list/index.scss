@@ -1,6 +1,12 @@
 .entry-list {
   position: relative;
-  padding: 6vmax 5vmax;
+  padding: 3.5rem;
+  @include medium {
+    padding: 2.5rem;
+  }
+  @include small {
+    padding: 1.5rem;
+  }
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -8,6 +14,13 @@
   .version-buttons {
     cursor: pointer;
     padding-bottom: 14px;
+    @include medium {
+      font-size: 0.85rem;
+    }
+    @include small {
+      font-size: 0.75rem;
+      text-align: center;
+    }
 
     span {
       padding: 5px;
@@ -36,14 +49,20 @@
     height: 100%;
     width: 1px;
     background-color: #e2e2e2;
-    margin: 20vmax 0;
+    margin-top: 10rem;
+    @include medium {
+      left: 2.5rem;
+    }
+    @include small {
+      left: 1.5rem;
+    }
   }
 }
 
 .loading {
   width: 100%;
   text-align: center;
-  font-size: 1.5vmax;
+  font-size: 1rem;
 
   .sk-circle-wrapper {
     margin: 0 auto;
@@ -52,23 +71,5 @@
   span {
     display: block;
     padding: 14px 0;
-  }
-}
-
-@media (max-width: $small-screen-breakpoint) {
-  .entry-list {
-    &::before {
-      left: 5vmax;
-      margin: 23vmax 0;
-    }
-
-    .version-buttons {
-      font-size: 2vmax;
-      text-align: center;
-    }
-  }
-
-  .loading {
-    font-size: 2.25vmax;
   }
 }

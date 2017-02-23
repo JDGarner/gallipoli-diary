@@ -1,0 +1,120 @@
+.entry {
+  position: relative;
+  margin-top: 10px;
+
+  .entry-month {
+    text-align: center;
+    height: 4rem;
+    font-size: 2rem;
+    @include medium {
+      font-size: 2.5rem;
+    }
+    @include small {
+      font-size: 2rem;
+    }
+
+    span {
+      padding: 2px 7px;
+      background-color: #FFF;
+      border-top: 1px #e2e2e2 solid;
+      border-bottom: 1px #e2e2e2 solid;
+      @include medium {
+        border-top: none;
+      }
+    }
+  }
+
+  .entry-date {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+
+    font-size: 1.3rem;
+    line-height: 3.25rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: -1.6rem;
+    @include medium {
+      left: 0;
+      font-size: 1.1rem;
+      line-height: 2.65rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: -1.25rem;
+    }
+    @include small {
+      font-size: 0.75rem;
+      line-height: 1.85rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-left: -0.9rem;
+    }
+  }
+
+  .entry-content {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    padding: 0.5rem;
+    width: 43%;
+    font-size: 1.25rem;
+    line-height: 1.65rem;
+
+    @include medium {
+      width: 93%;
+      margin-left: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    @include small {
+      margin-left: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      line-height: 1.35rem;
+    }
+
+    .entry-text {
+      &.note {
+        padding-top: 10px;
+      }
+
+      b {
+        font-family: 'Cormorant-Bold', serif;
+      }
+    }
+
+    .entry-day {
+      font-size: 1.65rem;
+      padding-top: 5px;
+      padding-bottom: 10px;
+      @include medium {
+        font-size: 1.5rem;
+      }
+      @include small {
+        font-size: 1.25rem;
+      }
+    }
+
+    .thumbnail-image {
+      width: 75%;
+      padding: 10px 0;
+    }
+  }
+}
+
+.entry:nth-child(even) {
+  .entry-date {
+    background-color: #e4f2ff;
+  }
+}
+
+.entry:nth-child(odd) {
+  .entry-date {
+    background-color: #ffdede;
+  }
+  .entry-content {
+    float: right;
+    @include medium {
+      float: left;
+    }
+  }
+}

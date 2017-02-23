@@ -11,13 +11,12 @@
   src: url('../fonts/cormorant-bold.woff');
 }
 
-$small-screen-breakpoint: 950px;
-
 @import 'reset';
-@import 'app';
-@import 'home';
-@import 'intro';
-@import 'entry-list';
-@import 'entry';
-@import 'thumbnail-image';
-@import 'lightbox';
+@import 'media-queries';
+@import "../components/app/index";
+@import "../components/home/index";
+@import "../components/intro/index";
+@import "../components/entry-list/index";
+@import "../components/entry/index";
+@import "../components/thumbnail-image/index";
+@import "../components/lightbox/index";

@@ -1,8 +1,8 @@
 import React from 'react';
-import EntryList from './entry-list';
-import Home from './home';
-import Intro from './intro';
-import Lightbox from './lightbox';
+import EntryList from '../entry-list';
+import Home from '../home';
+import Intro from '../intro';
+import Lightbox from '../lightbox';
 
 class App extends React.Component {
   constructor() {

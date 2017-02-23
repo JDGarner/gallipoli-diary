@@ -1,8 +1,8 @@
 import React from 'react';
 import Request from 'superagent';
 import cx from 'classnames';
-import Entry from './entry';
-import config from '../config';
+import Entry from '../entry';
+import config from '../../config';
 import Spinner from 'react-spinkit';
 
 class EntryList extends React.Component {

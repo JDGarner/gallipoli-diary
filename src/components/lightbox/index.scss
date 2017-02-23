@@ -21,7 +21,7 @@
   }
 }
 
-@media (max-width: $small-screen-breakpoint) {
+@media #{$medium-screen-breakpoint} {
   .lightbox img {
     max-width: 92%;
     max-height: 92%;
