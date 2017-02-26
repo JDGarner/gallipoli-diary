@@ -5,7 +5,7 @@ import Config from '../../config';
 class Intro extends React.Component {
 
   render() {
-    let imgPath = Config.cdnHost + "bampa-trench.jpg";
+    let imgPath = Config.cdnHost + "young-b.jpg";
 
     return (
       <div className="intro">
@@ -16,11 +16,11 @@ class Intro extends React.Component {
         </div>
           <ThumbnailImage
             imagePath={imgPath}
-            imageNote="Bampa sitting on the left (Tap to zoom)"
+            imageNote="Bampa before leaving for Gallipoli, aged 21 (Tap to zoom)"
             showLightbox={this.props.showLightbox.bind(this)} />
         <div className="intro-text two">
-          <span>Frederick Richard Goddard (known as Bampa to his Grandchildren) enlisted on 26th January 1915,
-            aged 21, and was sent to Gallipoli to work as a stretcher bearer.</span>
+          <span>Frederick Richard Goddard (known as Bampa to his Grandchildren) enlisted on 26th January 1915
+            and was sent to Gallipoli to work as a stretcher bearer.</span>
           <span>The following diary was transcribed by David Garner, Grandson of Bampa.</span>
         </div>
       </div>
