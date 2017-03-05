@@ -1,53 +1,25 @@
 import React from 'react';
-import Request from 'superagent';
 import cx from 'classnames';
 import Entry from '../entry';
-import config from '../../config';
-import Spinner from 'react-spinkit';
 
 class EntryList extends React.Component {
   constructor() {
     super();
     this.state = {
-      entries: [],
       showAbridgedVersion: true
     };
     this.currentMonth = '';
   }
 
-  componentDidMount() {
-    var url = config.diaryApiHost + '/entries';
-
-    Request.get(url).end((err, response) => {
-      if (err) {
-        console.log('There was an error fetching from API', err);
-      } else if (response) {
-        this.setState({
-          entries: response.body
-        });
-      }
-    });
-  }
-
   render() {
-    if (this.state.entries && this.state.entries.length > 0) {
-      return (
-        <div className="entry-list">
-          { this.renderVersionButtons() }
-          {this.state.entries.map((e, i) =>
-            this.renderEntry(e, i)
-          )}
-
-        </div>
-      );
-    } else {
-      return (
-        <div className="loading">
-          <Spinner spinnerName='circle' />
-          <span>Loading diary entries...</span>
-        </div>
-      );
-    }
+    return (
+      <div className="entry-list">
+        { this.renderVersionButtons() }
+        {this.props.entries.map((e, i) =>
+          this.renderEntry(e, i)
+        )}
+      </div>
+    );
   }
 
   renderVersionButtons() {
