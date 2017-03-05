@@ -27,7 +27,7 @@ class Intro extends React.Component {
         <TextSection text={this.textSectionOne} />
         <ThumbnailImage
           imagePath={imgPath}
-          imageNote="Bampa before leaving for Gallipoli, aged 21 (Tap to zoom)"
+          imageNote="Fred Goddard (Bampa) before leaving for Gallipoli, aged 21 (Tap to zoom)"
           showLightbox={this.props.showLightbox.bind(this)} />
         <TextSection text={this.textSectionTwo} />
       </div>

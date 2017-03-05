@@ -65,7 +65,7 @@ class PostScript extends React.Component {
           showLightbox={this.props.showLightbox.bind(this)} />
         <ThumbnailImage
           imagePath={imgPath4}
-          imageNote=""
+          imageNote="Bampa and Margaret about 40 years later"
           showLightbox={this.props.showLightbox.bind(this)} />
         <TextSection text={this.textSectionFour} />
       </div>
